@@ -264,24 +264,6 @@ li a:hover:not(.active) {
 </script>
 <script type="text/javascript">
 
-var int=setInterval('check()', 500);
-function check()
-{
-   if (chkObject('div')==true)
-   {
-      window.alert('true');
-      int=window.clearInterval(int)
-   }
-   else
-   {
-      document.write('<p>false </p>')
-   }
-}
-
-function chkObject(elemId)
-{
-   return (document.getElementById(elemId))? true : false;
-}
 
         
 function searchTable() {
