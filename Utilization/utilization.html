@@ -332,7 +332,7 @@ function searchTable() {
   is = document.getElementById("custId");
   fi = is.value.toUpperCase();
   ta= document.getElementById('mytable');
-  tri = table.getElementsByTagName("tr");
+  tri = ta.getElementsByTagName("tr");
   alert(tri)
   for (ii = 0; ii < tr.length; ii++) {
     tdi = tri[ii].getElementsByTagName("td")[3];
