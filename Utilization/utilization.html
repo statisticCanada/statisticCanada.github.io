@@ -235,11 +235,11 @@ li a:hover:not(.active) {
 
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="hidden" id="custId" type='text' >
+<input type="hidden" id="custId" onkeyup='hidden()' type='text' >
 <input align="right" size="60" id='myInput' onkeyup='searchTable()' type='text' Placeholder='Enter a keyword.. e.g., nutrition'>
 </div>
 
- <div id="viz" style="overflow:auto;" align="center" width="100%">
+ <div id="viz" style="overflow:auto;" align="center" width="100%" height="400px">
 </div>
 
 <br>
@@ -309,7 +309,6 @@ function searchTable() {
   filter = input.value.toUpperCase();
   table = document.getElementById('mytable');
   tr = table.getElementsByTagName("tr");
-   alert("iam isnide tr")
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[3];
     if (td) {
@@ -330,7 +329,7 @@ function searchTable() {
 
 
  window.onload=function(){ 
- function getAllUrlParams(url) {
+ function getAllUrlParams(url){
 
   // get query string from url (optional) or window
   var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
@@ -394,6 +393,9 @@ function searchTable() {
 
   return obj;
 }
+
+
+
  
  
  
@@ -416,8 +418,7 @@ function searchTable() {
   if( cat==null){ 
  }else{ 
  document.getElementById('custId').value =  decodeURIComponent((cat + '').replace(/\+/g, '%20')); 
- alert("i am inside cat")
-   hidden()
+ hidden()
  
  
  } 
