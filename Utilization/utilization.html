@@ -197,7 +197,7 @@ li a:hover:not(.active) {
 
 
 </style>
-<script>
+<script type="text/javascript">
 function hidden1() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("custId");
@@ -327,26 +327,26 @@ function searchTable() {
     }       
   }
 } 
- function hidden() {
-  var is, fi, ta, tri, tdi, ii;
-  is = document.getElementById("custId");
-  fi = is.value.toUpperCase();
-  ta= document.getElementById('mytable');
-  tri = ta.getElementsByTagName("tr");
-  alert(tri)
-  for (ii = 0; ii < tr.length; ii++) {
-    tdi = tri[ii].getElementsByTagName("td")[3];
+function hidden() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("custId");
+  filter = input.value.toUpperCase();
+  table = document.getElementById('mytable');
+  tr = table.getElementsByTagName("tr");
+  alert(tr)
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
      
-	if (tdi) {
-     txtValuee = tdi.textContent || tdi.innerText;
-      if (txtValuee.toUpperCase().indexOf(fi) > -1) {
-        tri[ii].style.display = "";
+	if (td) {
+     txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
       } else {
-        tri[ii].style.display = "none";
+        tr[i].style.display = "none";
       }
     }       
   }
-} 
+}  
  
 </script>
 
