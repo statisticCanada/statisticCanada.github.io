@@ -6,6 +6,9 @@
   width:1200px;
   align:center
 }
+#mylist {
+  width:750px;   
+}
  
 .node rect {
   cursor: move;
