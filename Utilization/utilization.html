@@ -311,7 +311,8 @@ function searchTable() {
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[3];
-    if (td) {
+     alert(td)
+	if (td) {
      txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -405,7 +406,7 @@ function searchTable() {
 
  var uc = getAllUrlParams().keyword;
  var cat = getAllUrlParams().category;
- alert(cat)
+
  decodeURIComponent((uc + '').replace(/\+/g, '%20'));
  
  
@@ -418,6 +419,7 @@ function searchTable() {
   if( cat==null){ 
  }else{ 
  document.getElementById('custId').value =  decodeURIComponent((cat + '').replace(/\+/g, '%20')); 
+  alert(cat)
  hidden()
  
  
