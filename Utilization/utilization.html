@@ -235,7 +235,7 @@ li a:hover:not(.active) {
 
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="hidden" id="custId" onkeyup='hidden()' type='text' >
+<input type="hidden" id="custId" type='text' >
 <input align="right" size="60" id='myInput' onkeyup='searchTable()' type='text' Placeholder='Enter a keyword.. e.g., nutrition'>
 </div>
 
@@ -309,6 +309,7 @@ function searchTable() {
   filter = input.value.toUpperCase();
   table = document.getElementById('mytable');
   tr = table.getElementsByTagName("tr");
+   alert("iam isnide tr")
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[3];
     if (td) {
@@ -415,7 +416,8 @@ function searchTable() {
   if( cat==null){ 
  }else{ 
  document.getElementById('custId').value =  decodeURIComponent((cat + '').replace(/\+/g, '%20')); 
- hidden()
+ alert("i am inside cat")
+   hidden()
  
  
  } 
