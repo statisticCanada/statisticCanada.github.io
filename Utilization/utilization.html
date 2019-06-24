@@ -486,7 +486,11 @@ function hidden() {
 
 </body>
 <script>
-
+function rafAsync() {
+    return new Promise(resolve => {
+        requestAnimationFrame(resolve); //faster than set time out
+    });
+}
 async function checkElement(selector) {
     const querySelector = document.querySelector(selector);
     while (querySelector === null) {
