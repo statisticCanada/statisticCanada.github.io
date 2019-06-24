@@ -88,7 +88,9 @@ window.onload=function(){
  }else{ 
  document.getElementById('custId').value =  decodeURIComponent((cat + '').replace(/\+/g, '%20')); 
  var input, filter, table, tr, td, i;
+  
   input = document.getElementById("custId");
+  alert(input)
   filter = input.value.toUpperCase();
   table = document.getElementById('mytable');
   tr = table.getElementsByTagName("tr");
