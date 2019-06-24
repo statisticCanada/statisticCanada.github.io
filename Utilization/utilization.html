@@ -311,9 +311,10 @@ function searchTable() {
   filter = input.value.toUpperCase();
   table = document.getElementById('mytable');
   tr = table.getElementsByTagName("tr");
+  alert(tr)
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[3];
-     alert(td)
+     
 	if (td) {
      txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
