@@ -21,17 +21,15 @@ body {
 table {
   font-family:monospace;
   margin: 0 auto;
-  overflow:auto;
   align:center;
   display:block;
-  overflow:auto;
   height:800px;
   width:100%;
 }
 th {
   padding: 1em;
   
-  text-align: left; min-width: 0px; max-width: 280px; white-space: normal; 
+  text-align: left; min-width: 0px; max-width:480px; white-space: normal; 
   background-color: rgb(0, 0, 51); 
   color: white; 
   border-top: 1px solid rgb(211, 211, 211);
@@ -39,7 +37,7 @@ th {
   border-right: 1px solid rgb(211, 211, 211);
 }
 td {
-text-align: left; min-width: 0px; max-width: 280px; white-space: normal; 
+text-align: left; min-width: 0px; max-width:480px; white-space: normal; 
 background-color: rgb(0, 0, 51); color: white; border-color: rgb(211, 211, 211); 
 border-style: solid; border-width: 1px;"
 }
@@ -162,17 +160,18 @@ height:120px;}
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="hidden" id="custId" onkeyup='searchTable()' type='text' >
+<input type="hidden" id="su" onkeyup='hiddensub()' type='text' >
 <input align="right" size="60" id='myInput' onkeyup='searchTable()' type='text' Placeholder='Enter a keyword.. e.g., nutrition'>
 </div>
 
  <div id="viz" style="overflow:auto;" align="center" width="100%">
  <table id="mytable">
-<thead><tr><th title="Field #1">Title</th>
-<th title="Field #2">Description</th>
-<th title="Field #3">Link</th>
-<th title="Field #4">Category</th>
-<th title="Field #5">Subcategory</th>
-<th title="Field #6">Source</th>
+<thead><tr><th >Title</th>
+<th>Description</th>
+<th>Link</th>
+<th>Category</th>
+<th>Subcategory</th>
+<th>Source</th>
 </tr></thead>
 <tbody><tr>
 <td>Nutrients in the food supply, by source of nutritional equivalent and commodity Archived</td>
@@ -3559,6 +3558,29 @@ function searchTable() {
     }       
   }
 } 
+
+ 
+ 
+ function hiddensub() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("custId");
+  filter = input.value.toUpperCase();
+  table = document.getElementById('mytable');
+  tr = table.getElementsByTagName("tr");
+  alert(tr)
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+     
+	if (td) {
+     txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}  
  function hidden() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("custId");
@@ -3642,6 +3664,8 @@ function searchTable() {
  
  var uc = getAllUrlParams().keyword;
  var cat = getAllUrlParams().category;
+ var subc=getAllUrlParams().subcategory;
+
  decodeURIComponent((uc + '').replace(/\+/g, '%20'));
  
  
@@ -3655,9 +3679,18 @@ function searchTable() {
  }else{ 
  document.getElementById('custId').value =  decodeURIComponent((cat + '').replace(/\+/g, '%20')); 
  hidden()
- } 
+ 
+ 
  
  } 
+if(subc==null){ 
+ }else{ 
+ document.getElementById('su').value =  decodeURIComponent((subc  + '').replace(/\+/g, '%20')); 
+ hiddensub()
+ 
+ 
+ } 
+ }
  
  
  
