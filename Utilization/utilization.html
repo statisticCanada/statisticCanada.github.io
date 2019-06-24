@@ -461,7 +461,12 @@ function hidden() {
  
 </script>
 <script>
-document.onload=hidden()
+document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+        alert(document.readyState);
+    }
+}
+
 </script>
 
 
