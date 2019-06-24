@@ -510,6 +510,14 @@ function loaded() {
   alert('loaded')
 }
 
+chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+  if (changeInfo.status == 'complete' && tab.active) {
+
+    alert("new")
+
+  }
+})
+
 
 
 
