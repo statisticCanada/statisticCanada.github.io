@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+<head>
+<title>Statcan demo
+
+</title>
+</head>
+
+
+
+
+<style>
+
+.left{
+  float:left;
+}
+.right{
+    float:right;
+}
+
+div.wrap {
+    overflow:hidden;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: navy;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+  color: black;
+  
+}
+
+.active {
+  background-color: lightblue;
+  color: black;
+}
+
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: navy;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+
+
+
+
+
+
+
+<div class="wrap">
+    <div class="left"><img id ="ttl" src="statscanada.png" alt="Statsistic Canada" style="width:500px; height:50px;"></div>
+    <div class="right"><img id ="se" src="ubc.png" alt="UBC" style="width:500px; height:60px;" HSPACE=”50”><br></div>
+</div>
+<ul>
+  <li><a class="active" href="index.html">Data Model</a></li>
+  <li><a href="viz.html">Data Statistics</a></li>
+  <li><a href="statsdata.html">Statistics Data</a></li>
+     <li><a href="feedback.html">Feedback</a></li>
+</ul>
+
+
+
+<div id="datamodel" class="tabcontent">
+<br>
+<div>
+<h1 style="color: navy; ">Statcan Food model</h1>
+</div>
+
+
+<div id="chart" align="center"></div>
+	
+    
+    
+<p>The data is created based on approximations and is for visualization purpose only.</p>
+
+
+
+<table align="center"  cellspacing="10">
+<tr>
+<th>
+<button class="favorite styled"
+        type="button" style="width:100%">
+    Food Supply
+</button>
+</th>
+<th>
+<button class="favorite styled"
+        type="button" style="width:100%">
+    Distribution
+</button>
+</th>
+
+<th>
+<button class="favorite styled"
+        type="button" style="width:100%">
+    Consumption
+</button>
+</th>
+<th>
+<button class="favorite styled"
+        type="button" style="width:100%">
+    Utilization
+</button>
+</th>
+<th>
+<button class="favorite styled"
+        type="button" style="width:100%">
+    Health Outcome
+</button>
+</th>
+</tr>
+<tr>
+<td>
+Food Production Hunting and Harvesting
+</td>
+<td>
+Food for sale, intended to be eaten home/eaten by animal
+</td>
+<td>
+Food acquired
+</td>
+<td>
+Nutrients and Non-nutrients intake
+</td>
+<td>
+Nutrients and non-nutrients Metabolic utilization
+</td>
+</tr>
+
+</table>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.rawgit.com/Neilos/bihisankey/master/bihisankey.js"></script>
+    <script src="app.js"></script>
+
+
