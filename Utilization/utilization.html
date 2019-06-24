@@ -199,7 +199,7 @@ li a:hover:not(.active) {
 </style>
 </head>
 
-  <body>
+  <body onload="myFunction()">
 
 
 
@@ -224,7 +224,7 @@ li a:hover:not(.active) {
 <div>
 
 <p align='left'><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Keyword:</b></p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select  id="mylist" oninput="myFunction()" onchange="myFunction()" >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select  id="mylist" oninput="myFunction()" >
 <option value="">&nbsp;</option>
 <option value="Supply">Supply</option>
 <option value="Distribution">Distribution</option>
@@ -263,6 +263,26 @@ li a:hover:not(.active) {
 <script id="rendered-js" src="../category.js" type="text/javascript">
 </script>
 <script type="text/javascript">
+
+var int=setInterval('check()', 500);
+function check()
+{
+   if (chkObject('div')==true)
+   {
+      window.alert('true');
+      int=window.clearInterval(int)
+   }
+   else
+   {
+      document.write('<p>false </p>')
+   }
+}
+
+function chkObject(elemId)
+{
+   return (document.getElementById(elemId))? true : false;
+}
+
         
 function searchTable() {
     var input, filter, found, table, tr, td, i, j;
@@ -420,7 +440,11 @@ function searchTable() {
  }else{ 
  document.getElementById('custId').value =  decodeURIComponent((cat + '').replace(/\+/g, '%20')); 
   alert(cat)
- myFunction()
+ var ck=chkObject('mytable')
+ if(ck==false){}
+ else{
+ hidden()
+ }
  
  
  } 
