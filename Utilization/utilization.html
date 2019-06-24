@@ -257,7 +257,7 @@ function hidden1() {
 
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="hidden" id="custId" value="utilization" oninput='hidden()' type='text' >
+<input type="hidden" id="custId"  oninput='hidden()' type='text' >
 <input align="right" size="60" id='myInput' onkeyup='searchTable()' type='text' Placeholder='Enter a keyword.. e.g., nutrition'>
 </div>
 
@@ -3817,7 +3817,7 @@ function hidden() {
  }else{ 
  document.getElementById('custId').value =  decodeURIComponent((cat + '').replace(/\+/g, '%20')); 
   alert(cat)
- 
+ hidden()
  
  
  
@@ -3836,43 +3836,5 @@ function hidden() {
 
 
 </body>
-<script>
-function rafAsync() {
-    return new Promise(resolve => {
-        requestAnimationFrame(resolve); //faster than set time out
-    });
-}
-async function checkElement(selector) {
-    const querySelector = document.querySelector(selector);
-    while (querySelector === null) {
-        await rafAsync()
-    }
-    return querySelector;
-}  
-
-checkElement('table')
-.then((element) => {
-     console.info(element);
-     //Do whatever you want now the element is there
-	 alert("donr")
-});
-
-function loaded() {
-  alert('loaded')
-}
-
-chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
-  if (changeInfo.status == 'complete' && tab.active) {
-
-    alert("new")
-
-  }
-})
-
-
-
-
-</script>
-
-
+<
 </html>
