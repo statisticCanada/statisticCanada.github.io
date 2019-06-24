@@ -8,6 +8,9 @@ body {
 .listmy{
   width:750px;   
 }
+#mylist {
+  width:750px;   
+}
 
 #title {
   color: white;
