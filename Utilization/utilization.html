@@ -492,7 +492,7 @@ function loaded() {
   alert('loaded')
 }
 
-if (img.complete) {
+if (img) {
   loaded()
 } else {
   img.addEventListener('load', loaded)
