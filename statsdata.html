@@ -147,37 +147,45 @@ height:120px;}
 <h1 style="color: navy; ">Data</h1>
 </div>
 	
+
+
 <div>
+
 <p align='left'><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Keyword:</b></p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select  id="mylist" onchange="myFunction()" >
-<option>Supply</option>
-<option>Distribution</option>
-<option>Consumption</option>
-<option>Utilization</option>
-<option>Health Outcome</option>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select  id="mylist" oninput="myFunction()" >
+<option value="">&nbsp;</option>
+<option value="Supply">Supply</option>
+<option value="Distribution">Distribution</option>
+<option value="Consumption">Consumption</option>
+<option value="Utilization" selected>Utilization</option>
+<option value="Health Outcome">Health Outcome</option>
 </select>
 
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="hidden" id="custId" onkeyup='searchTable()' type='text' >
+<input type="hidden" id="custId"  oninput='hidden()' type='text' >
 <input type="hidden" id="su" onkeyup='hiddensub()' type='text' >
 <input align="right" size="60" id='myInput' onkeyup='searchTable()' type='text' Placeholder='Enter a keyword.. e.g., nutrition'>
 </div>
 
- <div id="viz" style="overflow:auto;" align="center" width="100%">
+ <div style="overflow:auto;" align="center" width="100%" height="400px">
+ 
  <table id="mytable">
-<thead><tr><th >Title</th>
-<th>Description</th>
-<th>Link</th>
-<th>Category</th>
-<th>Subcategory</th>
-<th>Source</th>
+ <thead><tr><th title="Field #1">Title</th>
+<th title="Field #2">Description</th>
+<th title="Field #3">Link</th>
+<th title="Field #4">Category</th>
+<th title="Field #5">Subcategory</th>
+<th title="Field #6">Source</th>
 </tr></thead>
 <tbody><tr>
 <td>Nutrients in the food supply, by source of nutritional equivalent and commodity Archived</td>
 <td>This table contains 12354 series, with data for years 1976 - 2009 (not all combinations necessarily have data for all years), and is no longer being released. This table contains data described by the following dimensions (Not all combinations are available): Geography (1 item: Canada); Nutrients (29 items: Calcium;Carbohydrates;Cholesterol;Copper; ...); Source of nutritional equivalent (2 items: Nutrients available;Nutrients available adjusted for losses); Commodity (213 items: All commodities;Cereal products, total;Breakfast food;Corn flour and meal; ...).</td>
 <td><a href="https://statisticCanada.github.io/Data_viz/nutrients">
-https://statisticCanada.github.io/Data_viz/nutrients.html</a></td>
+https://statisticCanada.github.io/Data_viz/nutrients.html
+</a>
+</td>
+
 <td>Utilization</td>
 <td>Nutrient &amp; non-nutrient metabolic utilization</td>
 <td>Stats Can</td>
@@ -3512,18 +3520,20 @@ https://statisticCanada.github.io/Data_viz/nutrients.html</a></td>
 </tr>
 </tbody></table>
  
- 
 </div>
 
+<br>
 
 
-		
-<script>
+<script type="text/javascript">
+
+
+        
 function searchTable() {
     var input, filter, found, table, tr, td, i, j;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
-    table = document.getElementById("mytable");
+    table = document.getElementById('mytable');
     tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td");
@@ -3544,7 +3554,7 @@ function searchTable() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("mylist");
   filter = input.value.toUpperCase();
-  table = document.getElementById("mytable");
+  table = document.getElementById('mytable');
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[3];
@@ -3558,10 +3568,7 @@ function searchTable() {
     }       
   }
 } 
-
- 
- 
- function hiddensub() {
+function hidden() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("custId");
   filter = input.value.toUpperCase();
@@ -3569,7 +3576,7 @@ function searchTable() {
   tr = table.getElementsByTagName("tr");
   alert(tr)
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[4];
+    td = tr[i].getElementsByTagName("td")[3];
      
 	if (td) {
      txtValue = td.textContent || td.innerText;
@@ -3580,16 +3587,21 @@ function searchTable() {
       }
     }       
   }
-}  
- function hidden() {
+} 
+
+
+ 
+ function hiddensub() {
   var input, filter, table, tr, td, i;
-  input = document.getElementById("custId");
+  input = document.getElementById("su");
   filter = input.value.toUpperCase();
-  table = document.getElementById("mytable");
+  table = document.getElementById('mytable');
   tr = table.getElementsByTagName("tr");
+  alert(tr)
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[3];
-    if (td) {
+    td = tr[i].getElementsByTagName("td")[4];
+    
+	if (td) {
      txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -3598,37 +3610,51 @@ function searchTable() {
       }
     }       
   }
-} 
-</script>	
+}   
+ 
+</script>
 
 
-<script>
+<script  type="text/javascript">
+
+
  window.onload=function(){ 
- function getAllUrlParams(url) {
+ function getAllUrlParams(url){
+
   // get query string from url (optional) or window
   var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+
   // we'll store the parameters here
   var obj = {};
+
   // if query string exists
   if (queryString) {
+
     // stuff after # is not part of query string, so get rid of it
     queryString = queryString.split('#')[0];
+
     // split our query string into its component parts
     var arr = queryString.split('&');
+
     for (var i = 0; i < arr.length; i++) {
       // separate the keys and the values
       var a = arr[i].split('=');
+
       // set parameter name and value (use 'true' if empty)
       var paramName = a[0];
       var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
+
       // (optional) keep case consistent
       paramName = paramName.toLowerCase();
       if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+
       // if the paramName ends with square brackets, e.g. colors[] or colors[2]
       if (paramName.match(/\[(\d+)?\]$/)) {
+
         // create key if it doesn't exist
         var key = paramName.replace(/\[(\d+)?\]/, '');
         if (!obj[key]) obj[key] = [];
+
         // if it's an indexed array e.g. colors[2]
         if (paramName.match(/\[\d+\]$/)) {
           // get the index value and add the entry at the appropriate position
@@ -3654,14 +3680,18 @@ function searchTable() {
       }
     }
   }
+
   return obj;
 }
+
+
+
  
  
  
  
  
- 
+
  var uc = getAllUrlParams().keyword;
  var cat = getAllUrlParams().category;
  var subc=getAllUrlParams().subcategory;
@@ -3679,26 +3709,26 @@ function searchTable() {
  }else{ 
  document.getElementById('custId').value =  decodeURIComponent((cat + '').replace(/\+/g, '%20')); 
  hidden()
- 
- 
- 
  } 
-if(subc==null){ 
+ 
+   if(subc==null){ 
  }else{ 
  document.getElementById('su').value =  decodeURIComponent((subc  + '').replace(/\+/g, '%20')); 
  hiddensub()
  
  
+ 
  } 
- }
+ 
+ } 
  
  
  
  
- 
- 
- </script>	
+</script>
 
- 
- 
-</body></html>
+
+
+</body>
+
+</html>
