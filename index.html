@@ -25,13 +25,33 @@ div.wrap {
 
 }
 
-.container-name div {
-    display: inline-block;
-	width: 100%;
-	min-height: 50px;
- 
-	height: auto;
-  }
+
+		
+.container-name {
+	max-width:960px;
+	background:#f9f9f9;
+	margin:auto;
+	text-align:justify;
+	width:100%;
+	font-size:0.1px;/* Kill white-space*/
+}
+.box {
+	display:inline-block;
+	padding:5px;
+	vertical-align:top;
+	font-size:16px;
+	font-size:1rem;
+}
+.container-name:after{
+	content:"";
+	display:inline-block;
+	height:1px;
+	width:0;
+	font-size:0;
+	line-height:0;
+	overflow:hidden;
+	margin:0 100% 0 0;
+}
 ul {
   list-style-type: none;
   margin: 0;
@@ -260,7 +280,7 @@ height:120px;}
 
 	<p>The data is created based on approximations and is for visualization purpose only.</p>
 <div class="container-name">
-<div class="div1">
+<div class="box">
 <pre><b>
  1. The click on categories above the visualization will direct the you to the data table and relationship graph for respective category. 
  2. The Concept map gives the relation between all the categories and subcategories based on thematic model.  </n>
@@ -278,7 +298,7 @@ height:120px;}
 
 
   
-  <div class="div2">
+  <div class="box">
 <p align="left">We will be happy to get some feedback from you.</p>
 	<iframe align="right"
     allow="microphone;"
