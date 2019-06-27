@@ -6,7 +6,7 @@ var treeData =[
     "children": [
       {
         "name": "Supply",
-        "parent": "Category",
+        "parent": "_Category",
         "children": [
           {
             "name": "Sub-Category",
@@ -78,7 +78,7 @@ var treeData =[
 	  },
       {
         "name": "Distribution",
-        "parent": "Category",
+        "parent": "_Category",
 		        "children": [
           {
             "name": "Sub-Category",
