@@ -13,7 +13,7 @@ var svg = d3.select("#chart").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
  
-var svg = d3.select("svg").attr("style", "outline:  solid white;")
+var svg = d3.select("svg")
 
 var sankey = d3.sankey()
     .nodeWidth(15)
