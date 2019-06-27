@@ -7,11 +7,11 @@ var treeData =[
       {
         "name": "Supply",
         "parent": "Category",
-        "children": [
+        "_children": [
           {
             "name": "Sub-Category",
             "parent": "Supply",
-			"children": [
+			"_children": [
 						{
 			"name": "Food production hunting and harvasting",
             "parent": "Sub-Category",
@@ -56,7 +56,7 @@ var treeData =[
           {
             "name": "Influences",
             "parent": "Supply",
-			"children": [
+			"_children": [
 			{"name": "Transport",
 			"parent": "Influences"
 			},
@@ -83,7 +83,7 @@ var treeData =[
           {
             "name": "Sub-Category",
             "parent": "Distribution",
-			"children": [
+			"_children": [
 			{"name": "Avaliable food supply + Traditional foods",
 			"parent": "Sub-Category",
 			},
@@ -104,7 +104,7 @@ var treeData =[
           {
             "name": "Influences",
             "parent": "Distribution",
-		    "children": [
+		    "_children": [
 				{"name": "Food Composition",
 				"parent": "Influences",
 				"link": "https://statisticcanada.github.io/Distribution/distribution.html?category=distribution"
@@ -125,7 +125,7 @@ var treeData =[
 	        {
         "name": "Consumption",
         "parent": "Category",
-		        "children": [
+		        "_children": [
           {
             "name": "Sub-Category",
             "parent": "Consumption",
@@ -158,7 +158,7 @@ var treeData =[
 			},
 			{"name": "Food  Preference",
 			"parent": "Influences",
-			"childern": [
+			"_children": [
 			{
 			"name": "Education  Information  Advertising",
 			"parent": "Food Preference",
@@ -198,11 +198,11 @@ var treeData =[
 	        {
         "name": "Utilization",
         "parent": "Category",
-		        "children": [
+		        "_children": [
           {
             "name": "Sub-Category",
             "parent": "Utilization",
-			"children": [
+			"_children": [
 			{"name": "Nutrient & non-  nutrient intakes",
 			"parent": "Utilization",
 			"link": "https://statisticcanada.github.io/statsdata.html?subcategory=Nutrient%20&%20non%20nutrient%20intakes"},
@@ -216,7 +216,7 @@ var treeData =[
           {
             "name": "Influences",
             "parent": "Utilization",
-			"children": [
+			"_children": [
 			{"name": "Existing health status and  nutrient requirements",
 			"parent": "Influences",
 			"link": "https://statisticcanada.github.io/Consumption/consumption.html?category=utilization"
@@ -234,11 +234,11 @@ var treeData =[
 	        {
         "name": "Health Outcome",
         "parent": "Category",
-		        "children": [
+		        "_children": [
           {
             "name": "Sub-Category",
             "parent": "Health Outcome",
-			"children": [
+			"_children": [
 			{"name": "Genetic  expression",
 			"parent": "Sub-Category",
 			"link": "https://statisticcanada.github.io/Health/Health.html?category=Health+Outcome"},
@@ -258,7 +258,7 @@ var treeData =[
           {
             "name": "Influences",
             "parent": "Health Outcome",
-			"children": [
+			"_children": [
 			{"name" : "Housing, sanitation,  occupation, services",
 			"parent": "Influences",
 			"link": "https://statisticcanada.github.io/Health/Health.html?category=Health+Outcome"
