@@ -129,7 +129,7 @@ var treeData =[
           {
             "name": "Sub-Category",
             "parent": "Consumption",
-			"children": [
+			"_children": [
 			{"name": "Food Acquired",
 			"parent": "Consumption",
 			"link": "https://statisticcanada.github.io/statsdata.html?subcategory=Food%20Acquired"},
@@ -150,7 +150,7 @@ var treeData =[
           {
             "name": "Influences",
             "parent": "Consumption",
-			"children": [
+			"_children": [
 			{"name": "Access and  equity issues",
 			"parent": "Influences",
 			"link": "https://statisticcanada.github.io/statsdata.html?subcategory=Access%20and%20Equity%20Issues,%20Education%20Information%20Advertising"
